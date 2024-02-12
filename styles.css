@@ -15,7 +15,7 @@ body {
     display: flex;
     flex-direction: column-reverse;
     justify-content: flex-end;
-    height: 100vh;
+
 
     overflow: hidden;
 }
@@ -190,7 +190,7 @@ a:visited {
 .add-to-chrome-button {
     font-family: 'Nunito', sans-serif;
     font-weight: 700;
-    font-size: 0.75rem;
+    font-size: 1rem;
     height: 3rem;
     color: white;
     background-color: black;
