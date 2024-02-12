@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="welcome-styles.css">
+    <link rel="icon" type="image/svg+xml" href="favicon-fixed2.svg">
+</head>
+<body>
+    <main>
+        <div class="logo-container">
+            <img draggable="false" class="logo-svg" src="favicon-fixed2.svg" />
+            <p class="logo-text"><b>Drop</b>Entry</p>
+        </div>
+        <div id="progressStage1" class="progress-stage-container">
+            <div class="progress-container">
+                <div class="progress-circle">1</div>
+                <div class="progress-line"></div>
+                <div class="progress-line progress-line-incomplete"></div>
+                <div class="progress-circle progress-circle-incomplete">2</div>
+                <div class="progress-line progress-line-incomplete"></div>
+                <div class="progress-line progress-line-incomplete"></div>
+                <div class="progress-circle progress-circle-incomplete">3</div>
+                <div class="progress-line progress-line-incomplete"></div>
+                <div class="progress-line progress-line-incomplete"></div>
+                <div class="progress-circle progress-circle-incomplete">4</div>
+            </div>
+            <h1 class="heading">Welcome! Let's get started...</h1>
+            <h2 class="subheading">Authenticate with Xero to start the process.</h2>
+            <form>
+                <div>
+                    <div class="policy-container">
+                        <input class="policy-checkbox" type="checkbox">
+                        <label for="agreeTerms">I've read and agree to the <a href="./terms" target="_blank">Terms and Conditions</a></label>
+                    </div>
+                    <div class="policy-container">
+                        <input class="policy-checkbox" type="checkbox">
+                        <label for="agreeTerms">I've read and agree to the <a href="./privacy" target="_blank">Privacy Policy</a></label>
+                    </div>
+                </div>
+                <button id="policySubmit" type="button" disabled>Authenticate</button>
+                <p id="policyMessage"></p>
+            </form>
+        </div>
+        <div id="progressStage2" class="progress-stage-container progress-stage-container-hidden">
+            <div class="progress-container">
+                <div class="progress-circle">1</div>
+                <div class="progress-line"></div>
+                <div class="progress-line"></div>
+                <div class="progress-circle">2</div>
+                <div class="progress-line"></div>
+                <div class="progress-line progress-line-incomplete"></div>
+                <div class="progress-circle progress-circle-incomplete">3</div>
+                <div class="progress-line progress-line-incomplete"></div>
+                <div class="progress-line progress-line-incomplete"></div>
+                <div class="progress-circle progress-circle-incomplete">4</div>
+            </div>
+            <h1 class="heading">Have multiple organisations?</h1>
+            <h2 class="subheading">Connect all your organisations to maximise time savings!</h2>
+            <div class="connected-organisations-container">
+                <p class="connected-organisations-text">Connected organisations</p>
+                <div class="connected-organisations-box"></div>
+            </div>
+            <button id="connectSubmit">Connect another</button>
+            <button id="connectFinish" class="connected-organisations-button">I'm all connected</button>
+            <p class="connected-organisations-message" id="connectMessage"></p>
+        </div>
+        <div id="progressStage3" class="progress-stage-container progress-stage-container-hidden">
+            <div class="progress-container">
+                <div class="progress-circle">1</div>
+                <div class="progress-line"></div>
+                <div class="progress-line"></div>
+                <div class="progress-circle">2</div>
+                <div class="progress-line"></div>
+                <div class="progress-line"></div>
+                <div class="progress-circle">3</div>
+                <div class="progress-line"></div>
+                <div class="progress-line progress-line-incomplete"></div>
+                <div class="progress-circle progress-circle-incomplete">4</div>
+            </div>
+            <h1 class="heading">Time to invite your team!</h1>
+            <h2 class="subheading">Selected users will receive an email invitation.</h2>
+            <div class="user-list-container">
+                <p class="user-list-heading">Your team</p>
+                <div class="user-list-box">
+                    <div class="user-list-item">
+                        <div>Bryson Camp <b style="color: lightgrey">(you)</b></div>
+                        <div class="flex"></div>
+                        <input type="checkbox" checked disabled>
+                    </div>
+                    <div class="user-list-item">
+                        <div>Carol Shi</div>
+                        <div class="flex"></div>
+                        <input type="checkbox">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

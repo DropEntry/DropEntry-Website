@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-container {
+    margin-top: 4rem;
+    height: 4rem;
+    display: inline-flex;
+    align-items: center;
+}
+
+.logo-text {
+    font-family: 'Nunito', sans-serif;
+    font-size: 2rem;
+}
+
+.logo-svg {
+    height: 2.25rem;
+    width: 2.25rem;
+    margin-right: 0.25rem;
+}
+
+.progress-container {
+    margin-top: 4rem;
+    height: 3rem;
+    width: 24rem;
+    display: flex;
+    align-items: center;
+}
+
+.progress-circle {
+    /*background: linear-gradient(to bottom, #01e8ff, #10a9ff);*/
+    background-color: #10a9ff;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    color: white;
+    font-size: 1.25rem;
+}
+
+.progress-line {
+    width: 2rem;
+    height: 2px;
+    background-color: #10a9ff;
+}
+
+.progress-line-incomplete {
+    background-color: #eeeeee;
+}
+
+.progress-circle-incomplete {
+    outline: 2px solid #eeeeee;
+    background-color: white;
+    color: #444444;
+}
+
+.heading {
+    margin-top: 4rem;
+    font-family: 'Nunito', sans-serif;
+}
+
+.subheading {
+    margin-top: 0rem;
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 1.125rem;
+    color: #666666;
+}
+
+form {
+    margin-top: 4rem;
+    width: 90%;
+    font-family: 'Nunito', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5rem;
+    cursor: pointer;
+    accent-color: #109aeb;
+    color: white;
+}
+
+a {
+    color: #109aeb;
+    font-weight: 500;
+}
+
+a:hover {
+    color: #0c83c7;
+}
+
+.policy-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+button {
+    margin-top: 4rem;
+    width: 95%;
+    padding: 0.675rem;
+    font-size: 1rem;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    background-color: #10a9ff;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0c83c7;
+}
+
+button:disabled {
+    background-color: #bbbbbb;
+    cursor: default;
+}
+
+.error {
+    color: rgb(229, 59, 59);
+    font-weight: bold;
+}
+
+.progress-stage-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+}
+
+.progress-stage-container-hidden {
+    display: none;
+}
+
+.connected-organisations-text, .user-list-heading {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+}
+
+.connected-organisations-container, .user-list-container {
+    margin-top: 2rem;
+    width: 95%;
+}
+
+.connected-organisations-box, .user-list-box {
+    margin-top: -0.5rem;
+    outline: 2px solid #eeeeee;
+    border-radius: 0.25rem;
+    font-family: 'Nunito', sans-serif;
+    color: #444444;
+    max-height: 7.35rem;
+    overflow-y: auto;
+    
+}
+
+.connected-organisations-box div {
+    padding: 0.5rem;
+}
+
+.user-list-item {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.flex {
+    flex: 1;
+}
+
+/* .user-list-box .user-list-item:not(:last-child)  */ 
+.connected-organisations-box div:not(:last-child), .user-list-box .user-list-item:not(:last-child) {
+    border-bottom: 2px solid #eeeeee;
+}
+
+.connected-organisations-button {
+    background-color: #bbbbbb;
+    padding: 0.4rem;
+    margin-top: 0.5rem;
+}
+
+.connected-organisations-button:hover {
+    background-color: #888888;
+}
+
+.connected-organisations-message {
+    font-family: 'Nunito', sans-serif;
+}
