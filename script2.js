@@ -160,7 +160,7 @@ boxes.addEventListener('scroll', () => {
 function doSomethingOnce(target) {
     console.log("Element is in view for the first time");
     // Place your code here
-    target.classList.add("loading-animation");
+    document.querySelector(".loading").classList.add("loading-animation");
     setInterval(() => {
         if (!featureUpdated) {
             /*
