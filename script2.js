@@ -146,7 +146,6 @@ boxes.addEventListener('scroll', () => {
     const maxScrollDepth = boxes.scrollWidth - boxes.clientWidth;
     const navDivs = document.querySelectorAll(".navigation div");
     const selectedIndex = Math.floor(scrollAmount/maxScrollDepth*4);
-    console.log(selectedIndex);
     for (let i = 0; i < navDivs.length; i++) { // Use a traditional for loop
         if (i == selectedIndex || selectedIndex >= 4 && i === 3) {
             navDivs[i].classList.add("selectedNav"); // Add to the selected index
@@ -154,5 +153,4 @@ boxes.addEventListener('scroll', () => {
             navDivs[i].classList.remove("selectedNav"); // Remove from the others
         }
     }
-
 });
