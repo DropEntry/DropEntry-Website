@@ -15,8 +15,6 @@ body {
     display: flex;
     flex-direction: column-reverse;
     justify-content: flex-end;
-
-
     overflow: hidden;
 }
 
@@ -92,7 +90,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    animation: pulse 4s infinite 1.2s; /* Starts after 5 seconds */
+    animation: pulse 4s infinite 1.2s;
     box-sizing: border-box;
 }
 
@@ -125,7 +123,6 @@ body {
 
 .navigation-bar-top {
     background-color: transparent;
-    
     transition: background-color 0.5s ease;
     box-shadow: none;
 }
@@ -277,7 +274,6 @@ a:visited {
     position: absolute;
     top: 50%;
     left: 50%;
-    /*transform: translate(-50%, -50%);*/
     animation: cursorMovement 4s infinite ease-in-out;
     z-index: 100;
     transform: translateX(500%) translateY(500%);
@@ -297,29 +293,28 @@ a:visited {
 @keyframes fileMovement {
     0%, 100% {
         transform: translateX(-80vw) translateY(10vh);
-        visibility: visible; /* Ensure the object is visible at the start/end */
+        visibility: visible;
     }
     30% {
         transform: translateX(-50%) translateY(-50%);
-        visibility: visible; /* Object is visible during the arc */
+        visibility: visible;
     }
     30%, 32% {
        transform: translateX(-50%) translateY(-50%);
-       visibility: visible; /* Object is visible at the peak of the arc */
+       visibility: visible;
     }
     33% {
-        visibility: hidden; /* Instantly hides the object */
+        visibility: hidden;
     }
     99% {
         transform: translateX(-80vw) translateY(10vh);
-        visibility: hidden; /* Object remains hidden as it "returns" */
+        visibility: hidden;
     }
 }
 
 @keyframes cursorMovement {
     0%, 100% {
         transform: translateX(calc(-80vw)) translateY(calc(10vh));
-        /*transform: translateX(calc(-80vw - 50%)) translateY(calc(10vh - 50%));*/
     }
     30% {
         transform: translateX(-50%) translateY(-50%);
@@ -329,48 +324,11 @@ a:visited {
     }
     80% {
         transform: translateX(calc(-80vw)) translateY(calc(10vh));
-        /*transform: translateX(calc(-80vw - 50%)) translateY(calc(10vh - 50%));*/
     }
 }
-
 
 .navigation-bar-link:hover {
     text-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
-}
-
-/*
-
-@keyframes cursorMovement {
-    0%, 100% {
-        transform: translateX(0) rotate(0deg);
-    }
-    30% {
-        transform: translateX(300px) translateY(-200px) rotate(0deg);
-    }
-    50% {
-       transform: translateX(300px) translateY(-200px) rotate(0deg); 
-    }
-    80% {
-        transform: translateX(0) rotate(0deg);
-    }
-}
-
-*/
-
-
-/*
-
-font-size: 5rem;
-    font-weight: 400;
-
-
-*/
-
-.white-section {
-    height: 400vh;
-    padding: 0rem 12rem;
-    display: flex;
-    flex-direction: column;
 }
 
 .line {
@@ -383,10 +341,10 @@ font-size: 5rem;
 
 .loading {
     position: absolute;
-    top: 0; /* Start filling from the top */
-    width: 100%; /* Fill the entire width of its container */
-    height: 0%; /* Initial height */
-    background-color: #1ab4d7; /* Fancy gradient */
+    top: 0;
+    width: 100%;
+    height: 0%;
+    background-color: #1ab4d7;
     animation: fillAndDrainBar 6s ease-in-out infinite;
     box-shadow: 0 0 10px 10px #1ab4d7;
     box-sizing: border-box;
@@ -430,20 +388,23 @@ font-size: 5rem;
     }
 }
 
-.heading2 {
-    margin: 0;
-    margin-top: 6rem;
-    font-family: "Roboto";
-    font-size: 3rem;
-    /*letter-spacing: 1px;*/
-    font-weight: 600;
+.white-section {
+    height: 400vh;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
 
+.heading2 {
+    font-family: "Roboto";
+    font-size: 2.25rem;
+    font-weight: 600;
+    margin: 0;
 }
 
 .heading3 {
-    margin: 1rem 0 0 0;
     font-family: "Roboto";
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     
     color: #222222;
     font-weight: 400;
@@ -452,8 +413,6 @@ font-size: 5rem;
 .section-container {
     display: flex;
     flex-direction: row;
-    /*padding: 4rem 2px;
-    padding-bottom: 0;*/
 }
 
 .box {
@@ -529,7 +488,9 @@ font-size: 5rem;
 
 .features-item {
     flex: 1;
-    padding: 1rem 0 0 2.5rem;
+    /*padding: 1rem 0 0 2.5rem;*/
+    padding: 1rem 2rem 0 2rem;
+    rem;
     color: #999999;
 }
 
@@ -545,7 +506,6 @@ font-size: 5rem;
     font-family: "Roboto", sans-serif;
     font-size: 1.25rem;
     font-weight: 500;
-    /*padding-bottom: 0.5rem;*/
 }
 
 .features-description {
@@ -561,54 +521,8 @@ font-size: 5rem;
 }
 
 .unselectable {
-    -webkit-user-select: none; /* Safari */
-    -moz-user-select: none;    /* Firefox */
-    -ms-user-select: none;     /* Internet Explorer/Edge */
-    user-select: none;         /* Non-prefixed version, currently supported by Chrome, Edge, Opera, and Firefox */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
-
-/*
-
-@media (min-width: 64rem) {
-
-
-}
-
-@media (max-width: 100rem) {
-    .heading {
-        font-size: 3.375rem;
-    }
-
-    .subheading {
-        font-size: 1.25rem;
-        margin-top: -1.5rem;
-    }
-
-    .add-to-chrome-button {
-        font-size: 1rem;
-        height: 3rem;
-        border-radius: 1.5rem;
-        width: 21rem;
-        margin-top: 4rem;
-    }
-
-    .add-to-chrome-text {
-        font-size: 0.875rem;
-        margin-left: 1.25rem;
-        margin-top: 1rem;
-    }
-
-    .screen {
-        width: 36rem;
-        height: 26rem;
-    }
-    
-
-}
-
-@media (min-width: 120rem) {
-
-}
-
-
-*/
