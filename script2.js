@@ -124,42 +124,6 @@ const getNextElement = (currentElement) => {
     return nextElement;
 }
 
-setInterval(() => {
-    if (!featureUpdated) {
-        /*
-        const selectedElement = document.querySelector(".features-item-selected");
-        document.querySelector(".features-icon-selected").classList.remove("features-icon-selected");
-        selectedElement.classList.remove("features-item-selected");
-        const nextElement = getNextElement(selectedElement);
-        nextElement.classList.add("features-item-selected");
-        nextElement.querySelector(".features-icon").classList.add("features-icon-selected");
-        */
-        const scrollAmount = boxes.scrollLeft;
-        const maxScrollDepth = boxes.scrollWidth - boxes.clientWidth;
-        const navDivs = document.querySelectorAll(".navigation div");
-        console.log("-------------------")
-        console.log(Math.floor(scrollAmount/maxScrollDepth*4));
-        const selectedIndex = (Math.floor(scrollAmount/maxScrollDepth*3)+1)%4;
-
-        /*const nextIndex = Math.ceil(scrollAmount/maxScrollDepth*4+1)%4;*/
-        console.log("hello");
-        console.log(selectedIndex);
-        console.log(maxScrollDepth / 4 * selectedIndex);
-        boxes.scrollLeft = maxScrollDepth / 3 * selectedIndex;
-        setTimeout(() => featureUpdated = false, 1000);
-
-        /*
-        for (let i = 0; i < navDivs.length; i++) { // Use a traditional for loop
-            if (i == selectedIndex || selectedIndex >= 4 && i === 3) {
-                navDivs[i].classList.add("selectedNav"); // Add to the selected index
-            } else {
-                navDivs[i].classList.remove("selectedNav"); // Remove from the others
-            }
-        }*/
-    } else {
-        featureUpdated = false;
-    }
-}, 4000);
 
 const boxes = document.querySelector(".boxes");
 
@@ -177,3 +141,82 @@ boxes.addEventListener('scroll', () => {
         }
     }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Function to be executed only the first time the element is in view
+function doSomethingOnce(target) {
+    console.log("Element is in view for the first time");
+    // Place your code here
+    target.classList.add("loading-animation");
+    setInterval(() => {
+        if (!featureUpdated) {
+            /*
+            const selectedElement = document.querySelector(".features-item-selected");
+            document.querySelector(".features-icon-selected").classList.remove("features-icon-selected");
+            selectedElement.classList.remove("features-item-selected");
+            const nextElement = getNextElement(selectedElement);
+            nextElement.classList.add("features-item-selected");
+            nextElement.querySelector(".features-icon").classList.add("features-icon-selected");
+            */
+            const scrollAmount = boxes.scrollLeft;
+            const maxScrollDepth = boxes.scrollWidth - boxes.clientWidth;
+            const navDivs = document.querySelectorAll(".navigation div");
+            /*console.log("-------------------")
+            console.log(Math.floor(scrollAmount/maxScrollDepth*4));*/
+            const selectedIndex = (Math.floor(scrollAmount/maxScrollDepth*3)+1)%4;
+    
+            /*const nextIndex = Math.ceil(scrollAmount/maxScrollDepth*4+1)%4;*/
+            /*console.log("hello");
+            console.log(selectedIndex);
+            console.log(maxScrollDepth / 4 * selectedIndex);*/
+            boxes.scrollLeft = maxScrollDepth / 3 * selectedIndex;
+            setTimeout(() => featureUpdated = false, 1000);
+    
+            /*
+            for (let i = 0; i < navDivs.length; i++) { // Use a traditional for loop
+                if (i == selectedIndex || selectedIndex >= 4 && i === 3) {
+                    navDivs[i].classList.add("selectedNav"); // Add to the selected index
+                } else {
+                    navDivs[i].classList.remove("selectedNav"); // Remove from the others
+                }
+            }*/
+        } else {
+            featureUpdated = false;
+        }
+    }, 4000);
+  }
+  
+
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+        // Run your code
+        doSomethingOnce(entry.target);
+
+        observer.unobserve(entry.target);
+        }
+    });
+}, {
+    // Optional settings. Example: 
+    // root: null, // observes intersections with the viewport
+    // threshold: 1.0, // trigger when 100% of the target is visible
+  });
+  
+  // Assuming you have an element you want to observe
+const targetElement = document.querySelector('.boxes');
+  
+observer.observe(targetElement);
+  
