@@ -405,7 +405,7 @@ a:visited {
 .heading3 {
     font-family: "Roboto";
     font-size: 1.25rem;
-    
+    margin: 1rem 0 3rem 0 ;
     color: #222222;
     font-weight: 400;
 }
@@ -418,7 +418,7 @@ a:visited {
 .box {
     border-top-left-radius: 3rem;
     border-top-right-radius: 3rem;
-    margin-left: 2rem;
+    margin-left: 1.5rem;
     border: 2px solid #ddd;
     outline: 2px solid #eee;
     height: 100%;
@@ -488,9 +488,8 @@ a:visited {
 
 .features-item {
     flex: 1;
-    /*padding: 1rem 0 0 2.5rem;*/
-    padding: 1rem 2rem 0 2rem;
-    rem;
+    /*paddin 1rem 0 0 2.5rem;*/
+    padding: 0.5rem 1.25rem 0 1.25rem;
     color: #999999;
 }
 
