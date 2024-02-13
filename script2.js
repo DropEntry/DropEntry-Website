@@ -136,3 +136,23 @@ setInterval(() => {
         featureUpdated = false;
     }
 }, 6000);
+
+
+
+const boxes = document.querySelector(".boxes");
+
+boxes.addEventListener('scroll', () => {
+    const scrollAmount = boxes.scrollLeft;
+    const maxScrollDepth = boxes.scrollWidth - boxes.clientWidth;
+    const navDivs = document.querySelectorAll(".navigation div");
+    const selectedIndex = Math.floor(scrollAmount/maxScrollDepth*4);
+    console.log(selectedIndex);
+    for (let i = 0; i < navDivs.length; i++) { // Use a traditional for loop
+        if (i == selectedIndex || selectedIndex >= 4 && i === 3) {
+            navDivs[i].classList.add("selectedNav"); // Add to the selected index
+        } else {
+            navDivs[i].classList.remove("selectedNav"); // Remove from the others
+        }
+    }
+
+});
