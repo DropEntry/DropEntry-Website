@@ -126,22 +126,45 @@ const getNextElement = (currentElement) => {
 
 setInterval(() => {
     if (!featureUpdated) {
+        /*
         const selectedElement = document.querySelector(".features-item-selected");
         document.querySelector(".features-icon-selected").classList.remove("features-icon-selected");
         selectedElement.classList.remove("features-item-selected");
         const nextElement = getNextElement(selectedElement);
         nextElement.classList.add("features-item-selected");
         nextElement.querySelector(".features-icon").classList.add("features-icon-selected");
+        */
+        const scrollAmount = boxes.scrollLeft;
+        const maxScrollDepth = boxes.scrollWidth - boxes.clientWidth;
+        const navDivs = document.querySelectorAll(".navigation div");
+        console.log("-------------------")
+        console.log(Math.floor(scrollAmount/maxScrollDepth*4));
+        const selectedIndex = (Math.floor(scrollAmount/maxScrollDepth*3)+1)%4;
+
+        /*const nextIndex = Math.ceil(scrollAmount/maxScrollDepth*4+1)%4;*/
+        console.log("hello");
+        console.log(selectedIndex);
+        console.log(maxScrollDepth / 4 * selectedIndex);
+        boxes.scrollLeft = maxScrollDepth / 3 * selectedIndex;
+        setTimeout(() => featureUpdated = false, 1000);
+
+        /*
+        for (let i = 0; i < navDivs.length; i++) { // Use a traditional for loop
+            if (i == selectedIndex || selectedIndex >= 4 && i === 3) {
+                navDivs[i].classList.add("selectedNav"); // Add to the selected index
+            } else {
+                navDivs[i].classList.remove("selectedNav"); // Remove from the others
+            }
+        }*/
     } else {
         featureUpdated = false;
     }
-}, 6000);
-
-
+}, 4000);
 
 const boxes = document.querySelector(".boxes");
 
 boxes.addEventListener('scroll', () => {
+    featureUpdated = true;
     const scrollAmount = boxes.scrollLeft;
     const maxScrollDepth = boxes.scrollWidth - boxes.clientWidth;
     const navDivs = document.querySelectorAll(".navigation div");
