@@ -174,15 +174,20 @@ function doSomethingOnce(target) {
             const scrollAmount = boxes.scrollLeft;
             const maxScrollDepth = boxes.scrollWidth - boxes.clientWidth;
             const navDivs = document.querySelectorAll(".navigation div");
-            /*console.log("-------------------")
-            console.log(Math.floor(scrollAmount/maxScrollDepth*4));*/
+            console.log("-------------------")
+            console.log(scrollAmount/maxScrollDepth*3);
+            console.log(Math.floor(scrollAmount/maxScrollDepth*3));
+
             const selectedIndex = (Math.floor(scrollAmount/maxScrollDepth*3)+1)%4;
+            //const selectedIndex = ((Math.floor(scrollAmount/maxScrollDepth*4))%4+1)%4;
+            
+            //console.log(selectedIndex);
     
             /*const nextIndex = Math.ceil(scrollAmount/maxScrollDepth*4+1)%4;*/
             /*console.log("hello");
             console.log(selectedIndex);
             console.log(maxScrollDepth / 4 * selectedIndex);*/
-            boxes.scrollLeft = maxScrollDepth / 3 * selectedIndex;
+            boxes.scrollLeft = maxScrollDepth / 2.9 * selectedIndex;
             setTimeout(() => featureUpdated = false, 1000);
     
             /*
