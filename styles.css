@@ -495,14 +495,15 @@ a:visited {
     max-height: 60vh;
     flex: 1;
     box-sizing: border-box;
+    padding: 1rem 1.5rem 0 1.5rem;
 }
 
 .box3 {
     margin-top: 1rem;
-    
+    padding: 0.5rem 1.125rem 0 1.125rem;
     border: 2px solid #ddd;
     outline: 2px solid #eee;
-    max-height: 30vh;
+    max-height: 40vh;
     flex: 1;
     margin-right: 2rem;
 }
