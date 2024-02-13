@@ -419,7 +419,7 @@ a:visited {
 
 .boxes {
     display: flex;
-    overflow-x: auto;
+    overflow-x: scroll;
     overflow-y: visible;
     width: 100vw;
     -webkit-overflow-scrolling: touch;
@@ -434,14 +434,16 @@ a:visited {
 .box {
     border-top-left-radius: 3rem;
     border-top-right-radius: 3rem;
+    margin-top: 2px;
     margin-left: 1.5rem;
     border: 2px solid #ddd;
-    height: 70vh;
+    outline: 2px solid #eee;
+    height: calc(70vh - 4px);
     min-width: 70vw;
     display: flex;
     flex-direction: column;
     align-items: center;
-    outline: 2px solid #eee;
+    box-sizing: border-box;
 }
 
 .box2 {
