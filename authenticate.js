@@ -10,7 +10,7 @@ params.forEach((value, key) => {
 
 const handleRequest = () => {
     console.log("Request started");
-    fetch('https://7wgnegmbs3.execute-api.ap-southeast-2.amazonaws.com/dev/request', {
+    fetch('https://api.dropentry.com/dev/request', { // https://7wgnegmbs3.execute-api.ap-southeast-2.amazonaws.com/dev/request'
         method: 'POST',
         credentials: 'include', // Needed to include cookies in a cross-origin request
         headers: {
