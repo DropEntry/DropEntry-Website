@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+    <link rel="stylesheet" href="demo-styles.css">
+    <link rel="icon" type="image/svg+xml" href="favicon-fixed2.svg">
+</head>
+<body>
+    <input id="pdfInput" type="file" accept="application/pdf" />
+    <iframe id="pdfViewer" style="width:100%; height:100vh;" hidden></iframe>
+    <script src="demo.js"></script>
+    <script src="processor.js"></script>
+    <script src="lib/pdf.mjs" type="module"></script>
+    <script src="lib/pdf.worker.mjs" type="module"></script>
+</body>
+</html>
